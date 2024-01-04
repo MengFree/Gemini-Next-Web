@@ -1,7 +1,7 @@
 "use client";
 
 require("../polyfill");
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { useState, useEffect } from "react";
 
 import styles from "./home.module.scss";
@@ -35,6 +35,7 @@ export function Loading(props: { noLogo?: boolean }) {
     <div className={styles["loading-content"] + " no-dark"}>
       {!props.noLogo && <BotIcon />}
       <LoadingIcon />
+      <SpeedInsights></SpeedInsights>
     </div>
   );
 }
